@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 var canvas = document.querySelector("canvas");
+canvas.width = window.innerWidth();
+canvas.height = window.innerHeight();
 var c = canvas.getContext('2d');
 var g = 9.8, e = 0.8;
 
@@ -41,3 +44,10 @@ var ball =
                 
             }
 }
+=======
+var canvas = document.querySelector('canvas');
+
+//Setting canvas to take up whole screen
+canvas.width = window.innerWidth();
+canvas.height = window.innerHeight();
+>>>>>>> 4294a7e1f38f67c670696dd0e1eab3572af6e848
