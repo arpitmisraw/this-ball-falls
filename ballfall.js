@@ -29,6 +29,12 @@ var ball =
                 c.closePath();
                 c.fillStyle = this.color;
                 c.fill();
+                c.fillStyle = 'green';
+                c.fillRect(0, 0, 100, canvas.height);
+                c.fillRect(0, 0, canvas.width, 100);
+                c.fillRect(canvas.width - 100, 0, 100, canvas.height);
+                c.fillRect(0, canvas.height - 100, canvas.width, 100);
+                c.stroke();
             },
 
 
@@ -39,15 +45,28 @@ var ball =
                 this.vy -= g*dt;
                 this.y += this.vy * dt;
                 this.x += this.vx * dt;
-                if (this.y - this.radius < 0) 
+                if (this.y - this.radius < 100) 
                 {
-                    this.y = this.radius;
+                    this.y = this.radius + 100;
                     this.vy *= -e;
                 }
 
-                if(this.x + this.radius > canvas.width || this.x - this.radius <= 0)
+                if (this.y + this.radius > canvas.height - 100) 
                 {
-                    this.vx *= -1;
+                    this.y = canvas.height - 100 - this.radius;
+                    this.vy *= -(e - 0.3);
+                }
+
+                if(this.x + this.radius > canvas.width - 100)
+                {
+                    this.x = canvas.width - 100 - this.radius;
+                    this.vx *= -e;
+                }
+
+                if(this.x - this.radius <= 100)
+                {
+                    this.x = 100 + this.radius;
+                    this.vx *= -e;
                 }
             },
     
