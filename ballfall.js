@@ -2,7 +2,7 @@ var canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
-var g = 9.8, e = 0, dt = 0.16, x_inp, y_inp;
+var g = 9.8, e = 0.7, dt = 0.16, x_inp, y_inp;
 
 
 
@@ -53,7 +53,7 @@ var ball =
     
     changeDirection : function()
             {
-                if(Math.sqrt(((this.x - x_inp) * (this.x - x_inp)) + ((this.y - y_inp) * (this.y - y_inp))) < this.radius + 50)
+                if(Math.sqrt(((this.x - x_inp) * (this.x - x_inp)) + ((this.y - y_inp) * (this.y - y_inp))) < this.radius + 50 )
                 {
                     if(this.vx * (this.x - x_inp) > 0)
                     {
