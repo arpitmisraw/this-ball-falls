@@ -17,7 +17,7 @@ canvas{
     margin: auto 0;
     font-size: 52px;
     background-color: #004346;
-    color: #75DDDD;
+    color: snow;
     /* text-align: left; */
     position: absolute;
     left: 2vw;
@@ -27,7 +27,7 @@ canvas{
     margin: auto 0;
     font-size: 52px;
     background-color: #004346;
-    color: #75DDDD;
+    color: snow;
     /* text-align: center; */
     position: absolute;
     left: 41vw;
@@ -36,7 +36,7 @@ canvas{
 #max_score{
     font-size: 52px;
     background-color: #004346;
-    color: #75DDDD;
+    color: snow;
     position: absolute;
     right: 2vw;
     top: 2vh;
