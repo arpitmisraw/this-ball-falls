@@ -15,6 +15,7 @@ A simple physics-based game made using JavaScript.
 1. Radius changes after every click.
 2. Gravity changes after 10 successful clicks.
 3. Countdown for gravity change is displayed at the bottom (thank us later)
+4. For best experience, or in case of any issues with the rendering, just refresh the page.
 
 # Flappy birds has got nothing on us.
 
