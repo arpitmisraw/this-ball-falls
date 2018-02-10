@@ -43,3 +43,13 @@ canvas{
     right: 2vw;
     top: 2.5vh;
 }
+#track{
+    font-family: Helvetica, sans-serif;
+    margin: auto 0;
+    font-size: 52px;
+    background-color: #004346;
+    color: snow;
+    position: absolute;
+    left: 48vw;
+    bottom: 2vh;
+}

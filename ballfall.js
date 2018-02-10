@@ -1,8 +1,10 @@
 var canvas = document.querySelector("canvas");
 var score = document.querySelector("#score");
 var max = document.querySelector("#max_score");
+var track = document.querySelector("#track");
 var radii = [25, 30, 35, 40, 45];
 var count = 4;
+var countDown = 10;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
@@ -17,7 +19,7 @@ c.rotate(-Math.PI);
 var ball = 
 {
     x : canvas.width / 2,
-    y : canvas.height/2,
+    y : canvas.height / 2,
     u : 0,
     ux : 0,
     uy : 0,
@@ -64,6 +66,8 @@ var ball =
                 if(touch % 11 == 0)
                 {
                     touch = 1;
+                    countDown = 11 - touch;
+                    track.innerText = countDown;
                     flag = -flag;
                     this.vy = 0;
                 }
@@ -85,6 +89,8 @@ var ball =
                         sc = 0;
                         score.innerHTML = "Score : " + sc;
                         touch = 1;
+                        countDown = 11 - touch;
+                        track.innerText = countDown;
                     }
                     if(flag == 1)
                     {
@@ -113,6 +119,8 @@ var ball =
                         sc = 0;
                         score.innerHTML = "Score : " + sc;
                         touch = 1;
+                        countDown = 11 - touch;
+                        track.innerText = countDown;
                     }
                 }
                 // Right restriction
@@ -154,6 +162,8 @@ var ball =
                             count = 4;
                     }
                     touch++;
+                    countDown = 11 - touch;
+                    track.innerText = countDown;
                     if(flag == -1)
                         this.vy = 50;
                     if(flag == 1)
