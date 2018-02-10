@@ -11,34 +11,35 @@ canvas{
     z-index: -1;
 }
 #score-bar{
+    
     position: absolute;
 }
 #score{
     margin: auto 0;
-    font-size: 52px;
+    font-size: 42px;
+    font-family: Helvetica, sans-serif;
     background-color: #004346;
     color: snow;
-    /* text-align: left; */
     position: absolute;
     left: 2vw;
-    top: 2vh;
+    top: 2.5vh;
 }
 #name{
+    font-family: Helvetica, sans-serif;
     margin: auto 0;
     font-size: 52px;
     background-color: #004346;
     color: snow;
-    /* text-align: center; */
     position: absolute;
     left: 41vw;
     top: 2vh;
 }
 #max_score{
-    font-size: 52px;
+    font-family: Helvetica, sans-serif;
+    font-size: 42px;
     background-color: #004346;
     color: snow;
     position: absolute;
     right: 2vw;
-    top: 2vh;
-    /* text-align: right; */
+    top: 2.5vh;
 }

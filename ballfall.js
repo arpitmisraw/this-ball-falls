@@ -1,12 +1,14 @@
 var canvas = document.querySelector("canvas");
 var score = document.querySelector("#score");
 var max = document.querySelector("#max_score");
+var radii = [15, 20, 30, 40, 45];
+var count = 4;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
-var g = 9.8, e = 0.7, dt = 0.16, x_inp, y_inp;
-sc = 0;
-maxScore = 0;
+var g = 9.8, e = 0.7, dt = 0.22, x_inp, y_inp;
+var sc = 0;
+var maxScore = 0;
 c.translate(0, canvas.height);
 c.scale(-1, 1); 
 c.rotate(-Math.PI);
@@ -20,8 +22,8 @@ var ball =
     vx : 0,
     vy : 0,
     theta : 0,
-    color : '#172A3A',
-    radius : 30,
+    color : 'snow',
+    radius : radii[count],
     draw : function()
             {
                 c.beginPath();
@@ -95,12 +97,20 @@ var ball =
                         sc += 1;
                         score.innerText = "Score : " + sc;
                         this.vx += (this.x - x_inp)/2;
+                        ball.radius = radii[count];
+                        count--;
+                        if(count === -1)
+                            count = 4;
                     }
                     else
                     {
                         sc += 1;
                         score.innerText = "Score : " + sc;
                         this.vx = (this.x - x_inp)/2;
+                        ball.radius = radii[count];
+                        count--;
+                        if(count === -1)
+                            count = 4;
                     }
                     this.vy = 50;
                 }
