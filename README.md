@@ -3,7 +3,7 @@ A simple physics-based game made using JavaScript.
 
 ## [Play](https://arpitmisraw.github.io/this-ball-falls/)
 
-![this-ball-falls](image/this-ball-falls.png)
+![this-ball-falls](./image/this-ball-falls.png)
 
 ## Rules:
 1. The objective of the game is to keep the ball in the air for the longest duration of time possible.
