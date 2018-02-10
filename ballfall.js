@@ -60,7 +60,6 @@ var ball =
                     touch = 1;
                     flag = -flag;
                     this.vy = 0;
-                    this
                 }
                 this.vy -= g*dt;
                 this.y += this.vy * dt;
