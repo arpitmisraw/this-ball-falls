@@ -52,10 +52,16 @@ var ball =
                 clear();
                 this.draw();
                 if(flag === -1)
+                {
                     g = 9.8;
+                    dt = 0.22;
+                }
                 if(flag === 1)
+                {
                     g = -9.8;
-                if(touch % 5 == 0)
+                    dt = 0.16;
+                }
+                if(touch % 11 == 0)
                 {
                     touch = 1;
                     flag = -flag;
@@ -69,13 +75,22 @@ var ball =
                 {
                     this.y = this.radius + 100;
                     this.vy *= -e;
-                    if(sc > maxScore)
-                    {    
-                        maxScore = sc;
-                        max.innerText = "Max Score : " + maxScore;
+                    if(flag == -1)
+                    {
+                        if(sc > maxScore)
+                        {    
+                            maxScore = sc;
+                            max.innerText = "Max Score : " + maxScore;
+                        }
+                        sc = 0;
+                        score.innerHTML = "Score : " + sc;
+                        touch = 1;
                     }
-                    sc = 0;
-                    score.innerHTML = "Score : " + sc;
+                    if(flag == 1)
+                    {
+                        sc += 5;
+                        score.innerHTML = "Score : " + sc;
+                    }
                 }
                 // Top restriction
                 if (this.y + this.radius > canvas.height - 100) 
@@ -83,8 +98,22 @@ var ball =
                     this.y = canvas.height - 100 - this.radius;
                     this.vy *= -e;
                     // Bonus points for top hit
-                    sc += 5;
-                    score.innerHTML = "Score : " + sc;
+                    if(flag == -1)
+                    {
+                        sc += 5;
+                        score.innerHTML = "Score : " + sc;
+                    }
+                    if(flag == 1)
+                    {
+                        if(sc > maxScore)
+                        {    
+                            maxScore = sc;
+                            max.innerText = "Max Score : " + maxScore;
+                        }
+                        sc = 0;
+                        score.innerHTML = "Score : " + sc;
+                        touch = 1;
+                    }
                 }
                 // Right restriction
                 if(this.x + this.radius > canvas.width - 100)
