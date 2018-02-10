@@ -1,12 +1,14 @@
 var canvas = document.querySelector("canvas");
 var score = document.querySelector("#score");
 var max = document.querySelector("#max_score");
-var radii = [15, 20, 30, 40, 45];
+var radii = [25, 30, 35, 40, 45];
 var count = 4;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
-var g = 9.8, e = 0.7, dt = 0.22, x_inp, y_inp;
+var touch = 1;
+var flag = -1;
+var g = 9.8, e = 0.7, dt = 0.23, x_inp, y_inp;
 var sc = 0;
 var maxScore = 0;
 c.translate(0, canvas.height);
@@ -49,6 +51,17 @@ var ball =
             {
                 clear();
                 this.draw();
+                if(flag === -1)
+                    g = 9.8;
+                if(flag === 1)
+                    g = -9.8;
+                if(touch % 5 == 0)
+                {
+                    touch = 1;
+                    flag = -flag;
+                    this.vy = 0;
+                    this
+                }
                 this.vy -= g*dt;
                 this.y += this.vy * dt;
                 this.x += this.vx * dt;
@@ -112,7 +125,11 @@ var ball =
                         if(count === -1)
                             count = 4;
                     }
-                    this.vy = 50;
+                    touch++;
+                    if(flag == -1)
+                        this.vy = 50;
+                    if(flag == 1)
+                        this.vy = -50;
                 }
                 x_inp = 0;
                 y_inp = 0;
